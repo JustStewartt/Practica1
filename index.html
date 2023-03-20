@@ -1,64 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Practica 1</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="styles.css">
+    <script src="js/bootstrap.bundle.min.js"></script>
+
+    <script src="https://smtpjs.com/v3/smtp.js">
+    </script>
+
+    <script type="text/javascript">
+        function sendEmail() {
+            Email.send({
+                    Host: "smtp.elasticemail.com",
+                    Username: "justchape@gmail.com",
+                    Password: "5D6E5B761844EB626E2D6C3938B666048CC9",
+                    To: 'justchape@gmail.com',
+                    From: "justchape@gmail.com",
+                    Subject: "Este es un virus",
+                    Body: "Well that was easy!!",
+                })
+                .then(function (message) {
+                    alert("mail sent successfully")
+                });
+        }
+    </script>
 </head>
 
 <body>
-    <header class="header">
-        <!-- Logo con link a la página principal -->
-        <a>
-          <img class="logo" src="img/fb.png" width="30px" height="30px"/>
-        </a>
-        <!-- Menú de navegación -->
-        <nav class="navbar">
-            <ul>
-              <li> Platform </li>
-              <li>Pricing</li> 
-              <li>Resources</li> 
-              <li>About</li>   
-            </ul>
-        </nav>
-        <!-- Contenedor de acciones de usuario -->
-        <div class="actions">
-            <a>Sign In</a>
-            <button>Start free trial</button>
-      </div>
-      </header>
+    <nav class="navbar navbar-expand-lg bg-success navbar-dark fixed-top"
+        style="background-color: rgb(170, 152, 224) !important;">
+        <header class="container-fluid">
+            <!-- Logo con link a la página principal -->
+            <a class="navbar-brand">
+                <img src="img/fb.png" width="30px" height="30px" />
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Menú de navegación -->
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="nav nav-fill">
+                    <li>
+                        <a class="nav-link" href="">Platform</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="pricing.html">Pricing</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="">Resources</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="">About</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- Contenedor de acciones de usuario -->
+            <div class="actions">
+                <a>Sign In</a>
+                <button class="btn btn-primary">Start free trial</button>
+            </div>
+        </header>
+    </nav>
 
     <h1> Mi Primer Pagina Este Semestre </h1>
     <h2>Heading level 2</h2>
     <h3>Heading level 3</h3>
     <h4>Heading level 4</h4>
     <h5>Heading level 5</h5>
-    <h6>Heading level 6</h6>  <!-- Este es un comentario -->
+    <h6>Heading level 6</h6> <!-- Este es un comentario -->
 
     <p>ESte es un parrafo</p>
     <p>ESte es un parrafo</p>
     <p>ESte es un parrafo</p>
     <p>ESte es un parrafo</p>
-    <form>
-        <label for="name">Nombre</label>
-        <input type="text" id="name" name="fname" placeholder="Nombre"><br><br>
-        <label>Apellido</label>
-        <input type="text" id="lastname" name="lastname" placeholder="Apellido"><br><br>
-        <label>Edad</label>
-        <input type="number" id="age" name="age" placeholder="Edad" min="18" max="35"><br><br>
-        <label>Email</label>
-        <input type="email" id="email" name="email" placeholder="Correo"><br><br>
-        <label>Contraseña</label>
-        <input type="password" id="password" name="password" placeholder="Contraseña"><br><br>
-        <button></button>
-        <button type="submit">Enviar</button>
-    </form>
+
+    <div class="container-fluid pt-5 pb-5">
+        <form class="position-absolute top-50 start-50" method="POST">
+            <div class="row">
+                <div class="col">
+                    <input type="text" class="form-control" placeholder="Enter email" name="email">
+                </div>
+                <div class="col">
+                    <button type="button" class="btn btn-primary" value="Send Email" 
+                    onclick="sendEmail()">Enviar</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <article class="publish">
+        <form>
+            <label for="name">Nombre</label>
+            <input type="text" id="name" name="fname" placeholder="Nombre"><br><br>
+            <label>Apellido</label>
+            <input type="text" id="lastname" name="lastname" placeholder="Apellido"><br><br>
+            <label>Edad</label>
+            <input type="number" id="age" name="age" placeholder="Edad" min="18" max="35"><br><br>
+            <label>Email</label>
+            <input type="email" id="email" name="email" placeholder="Correo"><br><br>
+            <label>Contraseña</label>
+            <input type="password" id="password" name="password" placeholder="Contraseña"><br><br>
+            <button></button>
+            <button type="submit">Enviar</button>
+        </form>
+    </article>
+
     <img src="img/dog.jpg" alt="" height="50px" width="50px">
 
     <section class="video">
-        <iframe width="300" height="200" src="https://www.youtube.com/embed/QpbQ4I3Eidg" title="Machine Gun Kelly, Camila Cabello - Bad Things (Official Music Video)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <iframe width="300" height="200" src="https://www.youtube.com/embed/QpbQ4I3Eidg"
+            title="Machine Gun Kelly, Camila Cabello - Bad Things (Official Music Video)" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
 
         <article class="publish">
             <h3>
@@ -85,17 +143,17 @@
                 <figure>
                     <img src="img/icon.png" alt="">
                 </figure>
-            <h3>Titulo 1</h3>
-            <p>
-                Este es un parrafo
-            </p>
-            <a href="">Publica instantaneamente</a>
-        </div>
-        <div class="feature-image">
-            <figure>
-                <img src="img/dog.jpg" alt="">
-            </figure>
-        </div>
+                <h3>Titulo 1</h3>
+                <p>
+                    Este es un parrafo
+                </p>
+                <a href="">Publica instantaneamente</a>
+            </div>
+            <div class="feature-image">
+                <figure>
+                    <img src="img/dog.jpg" alt="">
+                </figure>
+            </div>
         </article>
 
         <article class="feature-card">
@@ -103,17 +161,17 @@
                 <figure>
                     <img src="img/icon.png" alt="">
                 </figure>
-            <h3>Titulo 1</h3>
-            <p>
-                Este es un parrafo
-            </p>
-            <a href="">Publica instantaneamente</a>
-        </div>
-        <div class="feature-image">
-            <figure>
-                <img src="img/dog.jpg" alt="">
-            </figure>
-        </div>
+                <h3>Titulo 1</h3>
+                <p>
+                    Este es un parrafo
+                </p>
+                <a href="">Publica instantaneamente</a>
+            </div>
+            <div class="feature-image">
+                <figure>
+                    <img src="img/dog.jpg" alt="">
+                </figure>
+            </div>
         </article>
 
         <article class="feature-card">
@@ -121,17 +179,17 @@
                 <figure>
                     <img src="img/icon.png" alt="">
                 </figure>
-            <h3>Titulo 1</h3>
-            <p>
-                Este es un parrafo
-            </p>
-            <a href="">Publica instantaneamente</a>
-        </div>
-        <div class="feature-image">
-            <figure>
-                <img src="img/dog.jpg" alt="">
-            </figure>
-        </div>
+                <h3>Titulo 1</h3>
+                <p>
+                    Este es un parrafo
+                </p>
+                <a href="">Publica instantaneamente</a>
+            </div>
+            <div class="feature-image">
+                <figure>
+                    <img src="img/dog.jpg" alt="">
+                </figure>
+            </div>
         </article>
 
         <article class="feature-card">
@@ -139,23 +197,139 @@
                 <figure>
                     <img src="img/icon.png" alt="">
                 </figure>
-            <h3>Titulo 1</h3>
-            <p>
-                Este es un parrafo
-            </p>
-            <a href="">Publica instantaneamente</a>
-        </div>
-        <div class="feature-image">
-            <figure>
-                <img src="img/dog.jpg" alt="">
-            </figure>
-        </div>
+                <h3>Titulo 1</h3>
+                <p>
+                    Este es un parrafo
+                </p>
+                <a href="">Publica instantaneamente</a>
+            </div>
+            <div class="feature-image">
+                <figure>
+                    <img src="img/dog.jpg" alt="">
+                </figure>
+            </div>
         </article>
+    </section>
 
-    
+    <section class="success-stories">
+        <article class="overview">
+            <h2>Growing ecommerce brands rely on Matcha.</h2>
+            <p>
+                Are you tired of wasting time publishing blog articles to only see a
+                trickle of traffic and no impact on sales? Join hundreds of business
+                owners and ecommerce marketers who rely on Matcha for quality content
+                and consistent performance from their blogs.
+            </p>
+            <button>
+                Who Uses Matcha?
+            </button>
+            <figure>
+                <img src="https://getmatcha.com/wp-content/uploads/2019/09/brands_group.png" alt="">
+            </figure>
+        </article>
+        <article class="stories-carousel">
+            <div id="carouselExampleFade" class="carousel slide carousel-fade pointer-event" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item">
+                        <div class="card">
+                            <div class="card-media">
+                                <figure>
+                                    <img src="img/dog.jpg" alt="">
+
+                                </figure>
+                                <div class="company">
+                                    <img src="https://getmatcha.com/wp-content/uploads/2019/05/everly_logo_blue_v3_x60@2x.png"
+                                        alt="">
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <h4>Everly</h4>
+                                <h3>
+                                    Early-Stage CPG Brand Increases Lead Conversion 20x,
+                                    Ecommerce Revenue 20%
+                                </h3>
+                                <div class="results">
+                                    <img src="img/dog.jpg" alt="Cart icon">
+                                    <p>22% of monthly revenue influenced by content</p>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <button>See Case Study</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </article>
+    </section>
+
+    <section class="how-does-it-work">
+        <h2 class="title">How does Matcha work?</h2>
+        <p class="description">
+            Your blog can be so much more than window dressing. Use Matcha’s
+            <a href="">simple formula</a> to transform your blog into an ecommerce
+            growth engine.
+        </p>
+        <button>Explore the Platform</button>
+        <div class="steps">
+            <article class="card-step">
+                <div class="card-step-image">
+                    <img src="img/dog.jpg" alt="Measure" class="card-step-bg">
+                </div>
+                <div class="card-step-body">
+                    <h3>Publish</h3>
+                    <p>
+                        Effortlessly fill your blog with content that shoppers want to
+                        read.
+                    </p>
+                    <a href="">Publish instantly →</a>
+                </div>
+            </article>
+            <article class="card-step">
+                <div class="card-step-image">
+                    <img src="img/dog.jpg" alt="Measure" class="card-step-bg">
+                </div>
+                <div class="card-step-body">
+                    <h3>Promote</h3>
+                    <p>
+                        Use articles in email, social, and content ads to attract more
+                        site visitors.
+                    </p>
+                    <a href="">Drrive morer site visitors →</a>
+                </div>
+            </article>
+            <article class="card-step">
+                <div class="card-step-image">
+                    <img src="img/dog.jpg" alt="Measure" class="card-step-bg">
+                </div>
+                <div class="card-step-body">
+                    <h3>Capture</h3>
+                    <p>
+                        Turn readers into email subscribers and subscribers into
+                        customers.
+                    </p>
+                    <a href="">Grow your email list →</a>
+                </div>
+            </article>
+            <article class="card-step">
+                <div class="card-step-image">
+                    <img src="img/dog.jpg" alt="Measure" class="card-step-bg">
+                </div>
+                <div class="card-step-body">
+                    <h3>Measure</h3>
+                    <p>
+                        See what’s working and what’s not to easily optimize for more
+                        traffic, email subscribers, and sales.
+                    </p>
+                    <a href="">Track performance →</a>
+                </div>
+            </article>
+        </div>
     </section>
 
 
-    
+
 </body>
+
 </html>
