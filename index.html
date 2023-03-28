@@ -9,17 +9,16 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="styles.css">
     <script src="js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script src="index.js"></script> 
 
-    <script src="https://smtpjs.com/v3/smtp.js">
-    </script>
-
-    <script type="text/javascript">
+<script type="text/javascript">
         function sendEmail() {
+            let email = document.getElementById('email').value;
             Email.send({
-                    Host: "smtp.elasticemail.com",
-                    Username: "justchape@gmail.com",
-                    Password: "5D6E5B761844EB626E2D6C3938B666048CC9",
-                    To: 'justchape@gmail.com',
+                    SecureToken: "6fd77b6e-423f-4fe1-a538-6fe60e47a540",
+                    To: email,
                     From: "justchape@gmail.com",
                     Subject: "Este es un virus",
                     Body: "Well that was easy!!",
@@ -28,7 +27,7 @@
                     alert("mail sent successfully")
                 });
         }
-    </script>
+    </script> 
 </head>
 
 <body>
@@ -52,7 +51,7 @@
                         <a class="nav-link" href="pricing.html">Pricing</a>
                     </li>
                     <li>
-                        <a class="nav-link" href="">Resources</a>
+                        <a class="nav-link" href="resources.html">Resources</a>
                     </li>
                     <li>
                         <a class="nav-link" href="">About</a>
@@ -83,7 +82,7 @@
         <form class="position-absolute top-50 start-50" method="POST">
             <div class="row">
                 <div class="col">
-                    <input type="text" class="form-control" placeholder="Enter email" name="email">
+                    <input type="text" class="form-control" placeholder="Enter email" name="email" id="email">
                 </div>
                 <div class="col">
                     <button type="button" class="btn btn-primary" value="Send Email" 
@@ -94,19 +93,14 @@
     </div>
 
     <article class="publish">
-        <form>
-            <label for="name">Nombre</label>
-            <input type="text" id="name" name="fname" placeholder="Nombre"><br><br>
-            <label>Apellido</label>
-            <input type="text" id="lastname" name="lastname" placeholder="Apellido"><br><br>
-            <label>Edad</label>
-            <input type="number" id="age" name="age" placeholder="Edad" min="18" max="35"><br><br>
-            <label>Email</label>
+        <form class="signup-form" method="post">
+           <label>Email</label>
             <input type="email" id="email" name="email" placeholder="Correo"><br><br>
-            <label>Contraseña</label>
-            <input type="password" id="password" name="password" placeholder="Contraseña"><br><br>
-            <button></button>
-            <button type="submit">Enviar</button>
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject">
+            <label for="message">Mensaje</label>
+            <textarea name="message" id="message" cols="30" rows="10"></textarea>
+            <button type="submit" value="Send Email" onclick="sendEmail()">Enviar</button>
         </form>
     </article>
 
@@ -127,11 +121,11 @@
                 audience. But you don’t have hours to create content that may or may not
                 work.
             </p>
-            <form action="">
+            <form id="myForm" class="signup-form" action="">
                 <p>Start publishing today:</p>
                 <div>
-                    <input type="text" placeholder="Enter email">
-                    <button>Start</button>
+                    <input type="email" id="email" name="email" placeholder="Enter email">
+                    <button type="submit">Start</button>
                 </div>
             </form>
         </article>

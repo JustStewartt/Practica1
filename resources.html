@@ -5,11 +5,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pricing</title>
+    <title>Resources</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/pricing.css">
     <script src="js/bootstrap.bundle.min.js"></script>
+    <script>
+        function color() {
+            document.getElementById("nombre").style.backgroundColor = "blue";
+            document.getElementById("nombre").style.color = "red";
+            document.getElementById("nombre").style.fontSize = "30px"
+        }
+    </script>
+    <script>
+        function cambiarImg(imagen) {
+            document.getElementById(imagen).src = "img/icon.png";
+            document.getElementById("img2").src = "img/dog.jpg";
+        }
+    </script>
 </head>
+
 <body>
     <nav class="navbar navbar-expand-sm bg-success navbar-dark fixed-top">
         <header class="container-fluid">
@@ -19,7 +33,7 @@
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
                 <span class="navbar-toggler-icon"></span>
-              </button>
+            </button>
             <!-- Menú de navegación -->
             <div class="collapse navbar-collapse" id="collapsibleNavbar">
                 <ul class="navbar-nav">
@@ -47,15 +61,26 @@
             </div>
         </header>
     </nav>
+    <br>
+    <br>
+    <br>
 
-    <div class="container-fluid mt-3">
-        <h2>Three Equal Columns</h2>
-        <p>You can also use numbers to control the column width. Just make sure that the sum always adds up to 12:</p>
-        <div class="row" style="column-gap: 10%;">
-          <div class="col-3 bg-success">.col-4</div>
-          <div class="col-3 bg-warning">.col-4</div>
-          <div class="col-3 bg-success">.col-4</div>
-        </div>
-      </div>
+    <div>
+        <p id="nombre">Este es un texto</p>
+        <button type="button" onclick="color()">Click aqui</button>
+        <br>
+        <button onclick="alert('Ha sido hackeado')">NO hagas click</button>
+    </div>
+
+    <div id="imagen">
+        <img id="img1" src="img/dog.jpg" alt="" width="200" height="200" onmouseover="cambiarImg('img1')"
+            onmouseout="this.src='img/dog.jpg';">
+        <img id="img2" src="img/fb.png" alt="" width="200" height="200" onmouseover="cambiarImg()">
+        <img id="img3" src="img/dog.jpg" alt="" width="200" height="200">
+
+
+    </div>
+
 </body>
+
 </html>
